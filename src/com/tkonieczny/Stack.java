@@ -2,6 +2,7 @@ package com.tkonieczny;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Stack implements StackOperations {
     public static final int TOP = 0;
@@ -18,10 +19,12 @@ public class Stack implements StackOperations {
     }
 
     @Override
-    public String pop() {
-        String tmpElement = getStack().get(TOP);
+    public Optional<String> pop() {
+       Optional <String> tmpElement = Optional.ofNullable(getStack().get(TOP));
         getStack().remove(TOP);
-        return tmpElement;
+       if(tmpElement.isPresent()) return tmpElement;
+       else
+           return Optional.empty();
     }
 
     @Override
