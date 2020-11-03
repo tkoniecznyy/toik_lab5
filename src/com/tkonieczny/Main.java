@@ -9,11 +9,14 @@ public class Main {
 	stack.push("b2");
 	stack.push("c3");
 	stack.push("d4");
+	stack.push(null);
 
         System.out.println("STACK: "+stack.getStack());
         System.out.println("STACK first element: "+stack.pop()); //a1 is removed
         //one more time
 		System.out.println("STACK first element: "+stack.pop()); // now b2 is on top of stack
-
+		System.out.println("STACK first element: "+stack.pop());
+		System.out.println("STACK first element: "+stack.pop());
+		System.out.println("STACK first element: "+stack.pop());
     }
 }
